@@ -1,4 +1,3 @@
-
 const request = require('then-request');
 const urljoin = require('url-join');
 const { cropLongData } = require('@kronoslive/codeceptjs-utils');
@@ -131,7 +130,8 @@ class HTTP extends Helper {
   /**
    * Validate that latest https response has specified JSON schema.
    * @param {string} schema - path to JSON schema file. is relative to schemas folder
-   * @param {*} params
+   * @param {*} params - (optional) if schema file is js file, that export function, then you can specify here params in array,
+   *      that will be applied to this function. Function should return JSON schema.
    * @param {*} data - (optional) - specify data that should be validated (by default first response message for latest
    *     request)
    * @returns {*}
@@ -141,6 +141,9 @@ class HTTP extends Helper {
    * ```
    */
   seeHttpResponseHasValidJsonSchema(schema, params, data) {
+    if (utils === undefined) {
+      throw new Error('To use JSON schema validation please add codeceptjs-utils-helper https://www.npmjs.com/package/@kronoslive/codeceptjs-utils-helper');
+    }
     data = data || this.currentResponse.body;
     return utils.seeDataHasValidJsonSchema(schema, params, data);
   }

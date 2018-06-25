@@ -1,6 +1,6 @@
 {
   "name": "codeceptjs-http",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "CodeceptJS helper for HTTP request with Mochawesome logging",
   "dependencies": {
     "@kronoslive/codeceptjs-utils": "^0.0.1",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:APshenkin/codeceptjs-http.git"
+    "url": "git@github.com:testphony/codeceptjs-http.git"
   },
   "author": "Andrey Pshenkin <andrey.pshenkin@gmail.com>",
   "license": "MIT"
