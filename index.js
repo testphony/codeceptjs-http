@@ -147,6 +147,10 @@ class HTTP extends Helper {
     data = data || this.currentResponse.body;
     return utils.seeDataHasValidJsonSchema(schema, params, data);
   }
+
+  sendRequestUntil(requestPath, method = 'GET', options = {}, predicate, domain) {
+    return utils.waitUntil(() => this.sendRequest(requestPath, method, options, domain).then(predicate), 2000, `http request wait ${requestPath} with ${predicate}`, 250);
+  }
 }
 
 module.exports = HTTP;
