@@ -1,6 +1,6 @@
 {
   "name": "codeceptjs-http",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "CodeceptJS helper for HTTP request with Mochawesome logging",
   "dependencies": {
     "@kronoslive/codeceptjs-utils": "^0.0.6",
