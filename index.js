@@ -148,8 +148,8 @@ class HTTP extends Helper {
     return utils.seeDataHasValidJsonSchema(schema, params, data);
   }
 
-  sendRequestUntil(requestPath, method = 'GET', options = {}, predicate, domain) {
-    return utils.waitUntil(() => this.sendRequest(requestPath, method, options, domain).then(predicate), 2000, `http request wait ${requestPath} with ${predicate}`, 250);
+  sendRequestUntil(requestPath, method = 'GET', options = {}, predicate, domain, timeout = 2000) {
+    return utils.waitUntil(() => this.sendRequest(requestPath, method, options, domain).then(predicate), timeout, `http request wait ${requestPath} with ${predicate}`, 250);
   }
 }
 
